@@ -9,6 +9,9 @@
 <body>
     <% for (post of posts) { %>
     <h1><%=   post.title %></h1>
+    <form action="/posts/show/<%= post.id %> " method="get">
+        <button type="submit"> click to view post details</button>
+    </form>
     <% } %>
 </body>
 </html>

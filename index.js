@@ -53,7 +53,12 @@ app.post("/posts/new" , (req , res )=>{
     console.log(req.body)
 })
 
-app.get("/posts/:id" , (req , res ) =>{
-
-   posts_data.find() 
+app.get("/posts/show/:id" , (req , res ) =>{
+    let {id }= req.params
+    let post = posts_data.find((p)=> p.id ==id)
+    console.log(id)
+    if(post){
+    res.render('show_post' , {post})
+    }
+    
 })
